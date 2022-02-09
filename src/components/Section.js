@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from "styled-components"
 
-function Section({title, description, backgroundImg,leftBtnText, rightBtnText}) {
+function Section({title, description,test, backgroundImg,leftBtnText, rightBtnText}) {
     return (
         <Wrap bgImage={backgroundImg}>
             <ItemText>
