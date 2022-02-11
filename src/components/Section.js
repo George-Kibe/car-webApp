@@ -1,24 +1,29 @@
 import React from 'react'
 import styled from "styled-components"
+import Fade from 'react-reveal/Fade'
 
 function Section({title, description,test, backgroundImg,leftBtnText, rightBtnText}) {
     return (
         <Wrap bgImage={backgroundImg}>
-            <ItemText>
-                <h1>{title}</h1>
-                <p>{description}</p>
-            </ItemText>
+            <Fade bottom>
+                <ItemText>
+                    <h1>{title}</h1>
+                    <p>{description}</p>
+                </ItemText>
+            </Fade>
             <Buttons>
-                <ButtonGroup>
-                    <LeftButton>
-                        {leftBtnText}
-                    </LeftButton>
-                    { rightBtnText &&  //if right button exists, show it, else dont
-                        <RightButton>
-                            {rightBtnText}
-                        </RightButton>
-                    }
-                </ButtonGroup>
+                <Fade>
+                    <ButtonGroup>
+                        <LeftButton>
+                            {leftBtnText}
+                        </LeftButton>
+                        { rightBtnText &&  //if right button exists, show it, else dont
+                            <RightButton>
+                                {rightBtnText}
+                            </RightButton>
+                        }
+                    </ButtonGroup>
+                </Fade>
                 <DownArrow className="rounded mx-auto d-block" src="/images/down-arrow.svg" />
             </Buttons>            
         </Wrap>
@@ -28,6 +33,7 @@ function Section({title, description,test, backgroundImg,leftBtnText, rightBtnTe
 export default Section
 
 const Wrap = styled.div`
+    z-index:10;
     width: 100vw;
     height:100vh; 
     background-size:cover;
@@ -74,7 +80,10 @@ const RightButton = styled(LeftButton)`
 
 const DownArrow=styled.img`
     margin-top:10px;
-    height:40px; 
+    height:40px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto; 
     overflow-x:hidden;
     animation: animateDown infinite 1.5s;`
 
