@@ -1,8 +1,11 @@
 {
+  "homepage": "http://George-Kibe.github.io/car-website",
   "name": "teslaclone",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
     "@reduxjs/toolkit": "^1.7.1",
@@ -13,11 +16,13 @@
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.6",
     "react-reveal": "^1.2.2",
-    "react-scripts": "5.0.0",
     "react-tinder-card": "^1.4.5",
-    "styled-components": "^5.3.3"
+    "react-scripts": "5.0.0",
+    "styled-components": "^5.3.6"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -37,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }
