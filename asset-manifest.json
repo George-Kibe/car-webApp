@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/car-webApp/static/css/main.242a41c6.css",
+    "main.js": "/car-webApp/static/js/main.33c01c29.js",
+    "index.html": "/car-webApp/index.html",
+    "main.242a41c6.css.map": "/car-webApp/static/css/main.242a41c6.css.map",
+    "main.33c01c29.js.map": "/car-webApp/static/js/main.33c01c29.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.242a41c6.css",
+    "static/js/main.33c01c29.js"
+  ]
+}
