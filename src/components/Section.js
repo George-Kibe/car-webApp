@@ -2,7 +2,8 @@ import React from 'react'
 import styled from "styled-components"
 import Fade from 'react-reveal/Fade'
 
-function Section({title, description,test, backgroundImg,leftBtnText, rightBtnText}) {
+function Section({title, description, backgroundImg,leftBtnText, rightBtnText}) {
+    console.log(backgroundImg)
     return (
         <Wrap bgImage={backgroundImg}>
             <Fade bottom>
@@ -24,12 +25,13 @@ function Section({title, description,test, backgroundImg,leftBtnText, rightBtnTe
                         }
                     </ButtonGroup>
                 </Fade>
-                <DownArrow className="rounded mx-auto d-block" src="/images/down-arrow.svg" />
+                <DownArrow className="rounded mx-auto d-block" src={`${process.env.PUBLIC_URL }/images/down-arrow.svg`} />
             </Buttons>            
         </Wrap>
     )
 }
 
+//background-image:url('/images/model-s.jpg');
 export default Section
 
 const Wrap = styled.div`
@@ -39,12 +41,12 @@ const Wrap = styled.div`
     background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
-    // background-image:url('/images/model-s.jpg');
     display:flex;
     flex-direction: column;
     justify-content: space-between;
     align-items:center;
-    background-image:${props => `url("/images/${props.bgImage}")`};
+background-image:${props => `url("${process.env.PUBLIC_URL }/images/${props.bgImage}")`};
+    
 `
 const ItemText =styled.div`
     padding-top: 15vh;
