@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 *{
   box-sizing: border-box;
   font-family: "Rubik", sans-serif;
@@ -27,3 +31,4 @@ a{
     transform: translateY(3px);
   }
 }
+
