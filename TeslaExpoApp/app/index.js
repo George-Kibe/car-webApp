@@ -1,18 +1,12 @@
 import { StyleSheet, Text, Image, View, FlatList } from 'react-native';
 import menuOptions from "../assets/menuOptions"
 import MenuOption from "./components/MenuOption"
-import {
-  FontAwesome,
-  Entypo,
-  MaterialCommunityIcons,
-  FontAwesome5,
-  Ionicons,
-} from '@expo/vector-icons';
-
+import {FontAwesome} from '@expo/vector-icons';
+import Controls from './components/Controls';
 import car from '../assets/images/car.png';
 
 export default function Page() {
-  console.log(menuOptions)
+  //console.log(menuOptions)
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -23,16 +17,13 @@ export default function Page() {
         <FontAwesome name="user-circle" size={30} color="gray" />        
       </View>
       <Image source={car} style={styles.image} resizeMode="contain" />
-      <View style={styles.controls}>
-        <Entypo name="lock" size={26} color="gray" />
-        <MaterialCommunityIcons name="fan" size={26} color="gray" />
-        <FontAwesome5 name="bolt" size={26} color="gray" />
-        <Ionicons name="car-sport-sharp" size={26} color="gray" />
-      </View>
+      {/* <Controls /> */}
       <FlatList
         data={menuOptions}
         keyExtractor={(item, index) => index}
-        renderItem = {({item}) => ( <MenuOption option={item} /> )}        
+        //renderItem = {({item}) => ( <MenuOption item={item} /> )}   
+        renderItem = {MenuOption}    
+        ListHeaderComponent = {Controls} 
       />
      
     </View>
@@ -63,10 +54,5 @@ const styles = StyleSheet.create({
   subtitle: {
     fontWeight: '500',
     color: 'gray',
-  },
-  controls: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    marginVertical: 20
   },
 });
